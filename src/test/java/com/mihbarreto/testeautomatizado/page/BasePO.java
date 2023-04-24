@@ -12,7 +12,7 @@ public abstract class BasePO {
 
     protected WebDriver driver; //** Driver das pages/
 
-//* Construtor Base oara a criação da fábrica de elementos(PageFactory)  * //
+//* Construtor Base para a criação da fábrica de elementos(PageFactory)  * //
     protected BasePO(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);

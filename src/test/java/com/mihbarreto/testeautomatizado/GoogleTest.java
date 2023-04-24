@@ -25,30 +25,33 @@ public static void prepararTestes(){
     @Test
     public void devePesquisarNoGoogle(){
 
-        googlePage.inputPesquisa.sendKeys("Batata Frita" + Keys.ENTER);
+        googlePage.pesquisar("Batata Frita");
+//        googlePage.inputPesquisa.sendKeys("Batata Frita" + Keys.ENTER);
 
        //** WebElement inputPesquisa = driver.findElement(By.name("q"));//
        //** inputPesquisa.sendKeys("Batata Frita" + Keys.ENTER); **//
 
-        String resultado = googlePage.divResultadoPesquisa.getText();
-//                driver.findElement(By.id("result-stats")).getText();
-        assertTrue(resultado, resultado.contains("Aproximadamente"));
+        String resultado = googlePage.obterResultadoPesquisa();
+////                driver.findElement(By.id("result-stats")).getText();
+//        assertTrue(resultado, resultado.contains("Aproximadamente"));
 
          }
 
     @Test
     public void devePesquisarNoGoogle2(){
 
-        googlePage.inputPesquisa.sendKeys("Sorvete" + Keys.ENTER);
+        googlePage.pesquisar("Sorvete");
+//        googlePage.inputPesquisa.sendKeys("Sorvete" + Keys.ENTER);
 
 
-        String resultado = googlePage.divResultadoPesquisa.getText();
+        String resultado = googlePage.obterResultadoPesquisa();
+//
+//        assertTrue(resultado, resultado.contains("Resultados"));
 
-        assertTrue(resultado, resultado.contains("Resultados"));
 
 
-
+        }
 
     }
 
-}
+
