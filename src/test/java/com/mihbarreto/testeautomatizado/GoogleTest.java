@@ -11,21 +11,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import static com.codeborne.selenide.Selenide.open;
 import static junit.framework.TestCase.assertTrue;
 
-public class GoogleTest {
-    private WebDriver driver;
-    private final String URL_BASE ="https://www.google.com/";
-    private final String CAMINHO_DRIVER = "C:\\Users\\miche\\Documents\\Java\\testes-automatizados\\chromedriver.exe";
+public class GoogleTest extends BaseTest {
 
-    private void iniciar(){
-        System.setProperty("webdriver.chrome.driver", CAMINHO_DRIVER);
-        driver= new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get(URL_BASE);
 
-    }
     @Test
     public void devePesquisarNoGoogle(){
-        iniciar();
 
         WebElement inputPesquisa = driver.findElement(By.name("q"));
         inputPesquisa.sendKeys("Batata Frita" + Keys.ENTER);
